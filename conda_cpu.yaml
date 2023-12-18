@@ -1,0 +1,23 @@
+name: dev-env-cpu
+channels:
+  - defaults
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pytorch::pytorch=2.0.0
+  - pytorch::torchvision=0.15.0
+  - omegaconf
+  - torchmetrics=0.10.3
+  - fvcore
+  - iopath
+  - pip
+  - pandas
+  - pip:
+    - scikit-learn
+    - scikit-image
+    - pandas
+    - seaborn
+    - optuna
+    - flask
+    - gunicorn

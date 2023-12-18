@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  predict_app:
+    build:
+      context: .
+      dockerfile: image-predict.dockerfile
+    ports:
+      - "9696:9696"  # Map the Flask app to port 9696
+    
+    depends_on:
+      - streamlit_frontend
+
+  streamlit_frontend:
+    build:
+      context: .
+      dockerfile: streamlit-app.dockerfile
+    environment:
+      - MODEL_ADDRESS=predict_app:9696
+    ports:
+      - "8501:8501"  # Map the Streamlit app to port 8501
