@@ -44,8 +44,11 @@ In this environment the dependencies from the aforementioned DINO-ViT will be in
 ### Creating evn. + installing dependencies
 # With GPU
 conda env create -f conda-gpu.yaml 
+conda activate dev-env-gpu
+
 # Alternative: with CPU only (significantly slower training)
 conda env create -f conda-cpu.yaml
+conda activate dev-env-cpu
 
 # For using the jupyter notebook
 pip install jupyter notebook ipython
