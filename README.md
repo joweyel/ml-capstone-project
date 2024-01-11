@@ -44,8 +44,11 @@ In this environment the dependencies from the aforementioned DINO-ViT will be in
 ### Creating evn. + installing dependencies
 # With GPU
 conda env create -f conda-gpu.yaml 
+conda activate dev-env-gpu
+
 # Alternative: with CPU only (significantly slower training)
 conda env create -f conda-cpu.yaml
+conda activate dev-env-cpu
 
 # For using the jupyter notebook
 pip install jupyter notebook ipython
@@ -57,6 +60,9 @@ This environment is also used to train the final model with [train.py](train.py)
 conda activate dev-env-gpu
 python3 train.py
 ```
+
+Alternatively to training, the trained model that is used in the project, can be found in the releases section.
+
 
 ### Pipenv environment for testing the Streamlit frontend
 To send image data to the classification model used in the flask-app, a streamlit frontend is used. For this a pipenv-environment is used. To create the environment use the [Pipfile](Pipfile) located in the project folder:
@@ -115,7 +121,7 @@ pipenv run streamlit run streamlit_app.py
 With the Web-UI you can upload imges that will be send to the model.
 
 ### Running the prediction model locally with `docker-compose`
-Finally the streamlit-app will also be packaged inside a docker container and is used in conjunction with the prediction docker-container. For this another [dockerfile](streamlit-app.dockerfile) is used.
+Finally the streamlit-app will also be packaged inside a docker container and is used in conjunction with the prediction docker-container. For this another [dockerfile](streamlit-app.dockerfile) is used. For the setup of both containers the file [docker-compose.yml](docker-compose.yml) is used.
 
 Both containers are build and run with docker compose:
 ```sh

@@ -16,6 +16,6 @@ services:
       context: .
       dockerfile: streamlit-app.dockerfile
     environment:
-      - MODEL_ADDRESS=predict_app:9696
+      - MODEL_ADDRESS=predict_app:9696  # Connection to exposed port of the predict-app
     ports:
       - "8501:8501"  # Map the Streamlit app to port 8501
