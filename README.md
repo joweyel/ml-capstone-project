@@ -11,9 +11,11 @@ In the context of autonomous driving the classification of vehicles is an integr
 
 To tackle the problem I wanted to explore the capabilities of a specific Vision Transformer (ViT) type DINO (self-**DI**stillation with **NO** labels) that was pre-trained on large datasets that include ImageNet-1k. This pre-training was self-supervised and allows the ViT-backbone to extract *very strong* features for computer vision downstream tasks (incl. classification). As it is usual with Transformer-based models, such models compute so called `[cls]`-tokens (global context information) as well as `patch`-token (local context information). In the context of image classification, the `[cls]`-token output is more relevant.
 
-![vit](https://production-media.paperswithcode.com/methods/Screen_Shot_2021-01-26_at_9.43.31_PM_uI4jjMq.png)
+![vit](https://github.com/google-research/vision_transformer/blob/main/vit_figure.png)
 
-*Image-Source*: [paperswithcode.com](https://paperswithcode.com/method/vision-transformer   )
+
+*Image-Source*: [github.com/google-research/vision_transformer](https://github.com/google-research/vision_transformer)
+
 
 For prediction of the object classes, a fully connected MLP head for binary classification is appened to the feature-extraction (encoder-) backbone.
 
